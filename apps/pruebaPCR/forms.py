@@ -15,7 +15,7 @@ class PruebaForm(forms.ModelForm):
 			
 		]
 		labels={
-		'id_prueba':'Numero de prueba',
+		'id_prueba':'Número de prueba',
         'nss_paciente': 'NSS',
         'cadena_PCR':'Cadena PCR',
         'resultado':'Resultado',

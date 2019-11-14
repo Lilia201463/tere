@@ -20,15 +20,15 @@ class MedicoForm(forms.ModelForm):
 
         ]
         labels={
-                  'cedula_medico': 'Número de Cedula',
-                  'apellido_paterno':'Primer apellido', 
-                  'apellido_materno': 'Segundo apellido', 
+                  'cedula_medico': 'Número de Cédula',
+                  'apellido_paterno':'Primer Apellido',
+                  'apellido_materno': 'Segundo Apellido',
                   'nombres': 'Nombre(s)',
                   'fecha_nacimiento': 'Fecha de Nacimiento',
                   'sexo':'Sexo',
                   'domicilio':'Domicilio',
                   'especialidad':'Especialidad',
-                  'celular':'Numero de celular',
+                  'celular':'Número de Celular',
 
         }
         widgets = {

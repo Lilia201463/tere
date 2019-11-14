@@ -11,6 +11,6 @@ class RegistroForm(UserCreationForm):
 				'email',
 			]
 		labels = {
-				'username': 'Nombre de usuario',
+				'username': 'Nombre de Usuario',
 				'email': 'Correo',
 		}

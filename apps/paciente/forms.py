@@ -22,15 +22,15 @@ class PacienteForm(forms.ModelForm):
 		]
 		labels={
 			'nss_paciente':'NSS', 
-        'cedula_medico':'Medico asignado',
-        'apellido_paterno':'Primer apellido',
-        'apellido_materno':'Segundo apellido', 
+        'cedula_medico':'Médico asignado',
+        'apellido_paterno':'Primer Apellido',
+        'apellido_materno':'Segundo Apellido',
         'nombres':'Nombre(s)', 
         'fecha_nacimiento':'Fecha de nacimiento',
         'sexo':'Sexo',
         'domicilio':'Domiciio', 
-        'correo_electronico':'Correo electronico',
-        'telefono':'Numero telefonico',
+        'correo_electronico':'Correo electrónico',
+        'telefono':'Numero telefónico',
         'celular':'Celular',
 
 		}

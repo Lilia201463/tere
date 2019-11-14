@@ -26,16 +26,16 @@ class CuestionarioForm(forms.ModelForm):
                   'id_cuestionario': 'Folio', 
                   'nss_paciente':'NSS', 
                   'nombres':'Nombres', 
-                  'apellido_paterno':'Primer apellido', 
-                  'apellido_materno': 'Segundo apellido', 
+                  'apellido_paterno':'Primer Apellido',
+                  'apellido_materno': 'Segundo Apellido',
                   'edad': 'Edad',
                   'sexo':'Sexo',
                   'residencia':'Localidad',
                   'even':'Eventos',
-                   'situacion':'situacion',
-                  'manifestaciones':'manifestaciones',
-                  'infecciones':'infecciones',
-                  'neoplasias':'neoplasias',  
+                   'situacion':'Situación',
+                  'manifestaciones':'Manifestaciones',
+                  'infecciones':'Infecciones',
+                  'neoplasias':'Neoplasias',
 
 
 

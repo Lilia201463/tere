@@ -33,7 +33,7 @@ class Cuestionario(models.Model):
         )
     sexo=models.CharField(max_length =15, choices = SEXO_CHOICES)
     RESIDENCIA_CHOICES=(
-            ('0.6', 'Aguas Calientes'),
+            ('0.6', 'Aguascalientes'),
             ('3.6', 'Baja California'),
             ('0.8', 'Baja California Sur'),
             ('1.3', 'Campeche'),
@@ -71,27 +71,27 @@ class Cuestionario(models.Model):
     EVEN_CHOICES=(
             ('1.9', 'Mis padres han sido portadores del VIH'),
             ('1.4', 'He compartido jeringas para el uso de drogas'),
-            ('1.8', 'He recibido una trasfusion sanguinea'),
-            ('94.8', 'He mantenido relaciones sexuales sin proteccion'),
+            ('1.8', 'He recibido una trasfusión sanguínea'),
+            ('94.8', 'He mantenido relaciones sexuales sin protección'),
 
         )
     even=models.CharField(max_length =15, choices = EVEN_CHOICES)
     SITUACION_CHOICES=(
             ('y1', 'Cuento con pareja sesxual estable'),
             ('y2', 'No tengo una pareja sexual estable'),
-            ('y3', 'Fui victima de un abuso sexual'),
+            ('y3', 'Fui víctima de un abuso sexual'),
             ('y4', 'Soy trabajador(a) sexual'),
 
         )
     situacion=models.CharField(max_length =15, choices = SITUACION_CHOICES)
     MANIFESTACIONES_CHOICES=(
             ('x1', 'Fiebre'),
-            ('x2', 'Perdida de peso'),
+            ('x2', 'Pérdida de peso'),
             ('x3', 'Dificultades visuales'),
             ('x4', 'Afecciones respiratorias'),
             ('x5', 'Diarrea'),
-            ('x6', 'Ulceras orales'),
-            ('x7', 'Lesiones o erupciones cutaneas'),
+            ('x6', 'Úlceras orales'),
+            ('x7', 'Lesiones o erupciones cutáneas'),
 
 
         )
@@ -103,7 +103,7 @@ class Cuestionario(models.Model):
             ('Z4', 'Hepatitis'),
             ('Z5', 'Herpes'),
             ('Z6', 'Salmonella'),
-            ('Z7', 'Otra infeccion bacteriana'),
+            ('Z7', 'Otra infección bacteriana'),
 
 
         )
@@ -112,7 +112,7 @@ class Cuestionario(models.Model):
             ('n1', 'Sarcoma de Kaposi'),
             ('n2', 'Linfoma cerebral primario'),
             ('n3', 'Enfermedad de Hodgkin'),
-            ('n4', 'Cancer cervicouterno'),
+            ('n4', 'Cáncer cervicouterno'),
             ('n5', 'Adenocarcinoma'),
 
 

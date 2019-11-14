@@ -16,11 +16,11 @@ class ExpedienteForm(forms.ModelForm):
             'observaciones',
 		]
 		labels={
-		'id_expediente':'Numero de expediente',
+		'id_expediente':'Número de expediente',
             'nss_paciente':'NSS', 
-            'titulo':'Titulo',
+            'titulo':'Título',
             'fecha':'Fecha',
-            'id_prueba':'Numero de prueba',
+            'id_prueba':'Número de Prueba',
             'id_cuestionario':'Folio de cuestionario', 
             'observaciones':'Observaciones',
 

@@ -5,7 +5,7 @@ from apps.paciente.models import Paciente
 class Prueba_PCR(models.Model):
 	id_prueba=models.AutoField(primary_key=True)
 	nss_paciente = models.OneToOneField(Paciente, null=True, blank=False, on_delete=models.CASCADE)
-	cadena_PCR= models.TextField()
+	cadena_PCR= models.CharField(max_length=8)
 	resultado= models.IntegerField(blank=True)
 
 

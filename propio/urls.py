@@ -16,17 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^home/',include('apps.home.urls')),
-    url(r'^paciente/', include(('apps.paciente.urls','apps.paciente'),namespace='Paciente')),
-    url(r'^medico/', include(('apps.medico.urls','apps.medico'),namespace='Médico')),
-    url(r'^cuestionario/', include(('apps.cuestionario.urls','apps.cuestionario'),namespace='Cuestionario')),
-    url(r'^expediente/', include(('apps.expediente.urls','apps.expediente'),namespace='Expediente')),
-    url(r'^pruebaPCR/', include(('apps.pruebaPCR.urls','apps.pruebaPCR'),namespace='PruebaPCR')),
-    url(r'^usuario/', include(('apps.usuario.urls','apps.usuario'),namespace='Usuario')),
-    url(r'^login/', LoginView.as_view(template_name='index.html'), name='Login'),
+    url(r'^home/', include(('apps.home.urls','apps.home'),namespace='home')),
+    url(r'^paciente/', include(('apps.paciente.urls','apps.paciente'),namespace='paciente')),
+    url(r'^medico/', include(('apps.medico.urls','apps.medico'),namespace='medico')),
+    url(r'^cuestionario/', include(('apps.cuestionario.urls','apps.cuestionario'),namespace='cuestionario')),
+    url(r'^expediente/', include(('apps.expediente.urls','apps.expediente'),namespace='expediente')),
+    url(r'^pruebaPCR/', include(('apps.pruebaPCR.urls','apps.pruebaPCR'),namespace='pruebaPCR')),
+    url(r'^usuario/', include(('apps.usuario.urls','apps.usuario'),namespace='usuario')),
+    url(r'^login/', LoginView.as_view(template_name='index.html'), name='login'),
+    url(r'^logout/', LogoutView.as_view(template_name='base:base.html'), name='logout'),
     url(r'^reset/password_reset', PasswordResetView.as_view(template_name='registration/password_reset_form.html', email_template_name= 'registration/password_reset_email.html'), name='password_reset'), 
     url(r'^password_reset_done', PasswordResetDoneView.as_view(template_name= 'registration/password_reset_done.html'), name='password_reset_done'),
     url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$', PasswordResetConfirmView.as_view(template_name= 'registration/password_reset_confirm.html'),name='password_reset_confirm'),

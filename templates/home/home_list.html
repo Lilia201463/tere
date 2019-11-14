@@ -1,38 +1,41 @@
 {% extends 'base/base.html' %}
+
 {% block content %}
-<div style="text-align:center"><h1>Lista de Expedientes</h1></div>
+  <div style="text-align:center"><h1>Lista de Cuestionarios</h1></div>
 <table class="table table-bordered">
   <thead>
     <tr>
-      <td>Numero de expediente</td>
+      <td>Numero de cuestionario</td>
       <td>NSS del paciente</td>
-      <td>Fecha</td>
+      <td>Apellidos</td>
+      <td>Nombres</td>
       <td>Acciones</td>
     </tr>
     
   </thead>
   <tbody>
     {% if object_list %}
-    {% for expediente in object_list %}
+    {% for home in object_list %}
     <tr>
-      <td>{{ expediente.id_expediente }}</td>
-      <td>{{ expediente.nss_paciente }}</td>
-      <td>{{ expediente.fecha }}</td>
-
-
+      <td>{{ home.id_cuestionario }}</td>
+      <td>{{ home.nss_paciente }}</td>
+      <td>{{ home.apellido_paterno }} {{ home.apellido_materno }}</td>
+      <td>{{ home.nombres }}</td>
       <td>
-        <a class="btn btn-primary" href="{% url 'expediente:expediente_editar' expediente.id_expediente %}">Editar</a>
-        <a class="btn btn-danger" href="{% url 'expediente:expediente_eliminar' expediente.id_expediente %}">Eliminar</a>
+        <a class="btn btn-primary" href="{% url 'home:home_editar' home.id_cuestionario %}">Editar</a>
+        <a class="btn btn-danger" href="{% url 'home:home_eliminar' home.id_cuestionario %}">Eliminar</a>
       </td>
     </tr>
     {% endfor %}
     
     {% else %}
-    <h1>No hay expedientes registrados</h1>
+    <h2>No hay cuestionarios registrados</h2>
     {% endif %}
   </tbody>
 </table> 
+
 <div style="text-align:center"><a class="btn btn-primary" href="{% url 'medico:medico_inicio'%}">Regresar al inicio</a></div>
+
 <ul class="pager">
   <li>
     {% if page_obj.has_previous %}

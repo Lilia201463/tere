@@ -1,7 +1,7 @@
 from django.db import models
 from apps.paciente.models import Paciente
 from apps.pruebaPCR.models import Prueba_PCR
-from apps.cuestionario.models import Cuestionario
+from apps.home.models import Home
 # Create your models here.
 
 class Expediente(models.Model):
@@ -10,7 +10,7 @@ class Expediente(models.Model):
     titulo = models.CharField(max_length=50)
     fecha = models.DateField()
     id_prueba = models.ForeignKey(Prueba_PCR, null=True, blank=False, on_delete=models.SET(0),related_name='pruebas_rel')
-    id_cuestionario = models.ForeignKey(Cuestionario, null=True, blank=False, on_delete=models.SET(0),related_name='cuestionarios_rel')
+    id_cuestionario = models.ForeignKey(Home, null=True, blank=False, on_delete=models.SET(0),related_name='cuestionarios_rel')
     observaciones=models.TextField()
 
 

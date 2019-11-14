@@ -1,10 +1,10 @@
 from django import forms
-from apps.cuestionario.models import Cuestionario
+from apps.home.models import Home
 
-class CuestionarioForm(forms.ModelForm):
+class HomeForm(forms.ModelForm):
 
     class Meta:
-        model = Cuestionario
+        model = Home
 
         fields = [
                   'id_cuestionario', 
@@ -14,10 +14,12 @@ class CuestionarioForm(forms.ModelForm):
                   'apellido_materno', 
                   'edad',
                   'sexo',
-                  'domicilio',
-                  'estado_civil',
                   'residencia',
-                  'celular',
+                  'even',
+                  'situacion',
+                  'manifestaciones',
+                  'infecciones',
+                  'neoplasias',
 
         ]
         labels={
@@ -28,10 +30,14 @@ class CuestionarioForm(forms.ModelForm):
                   'apellido_materno': 'Segundo apellido', 
                   'edad': 'Edad',
                   'sexo':'Sexo',
-                  'domicilio':'Domicilio',
-                  'estado_civil':'Estado civil',
                   'residencia':'Localidad',
-                  'celular':'Numero telefonico',
+                  'even':'¿Se ha encontrado expuesto a alguno de los eventos se mencionan a continuación?',
+                   'situacion':'En caso de haber tenido relaciones sexuales sin protección ¿bajo que circunstancia fue?',
+                  'manifestaciones':'¿Cual de las siguientes manifestaciones clinicas ha presentado con mayor frecuencia?',
+                  'infecciones':'¿Ha sido diagnosticado portador de alguna infección mencionada a continuación? (Indique cual) ',
+                  'neoplasias':'Bajo supervisión médica ¿ha sido diagnosticado con alguno de los siguientes padecimientos? (Indique cual)',  
+
+
 
         }
         widgets = {
@@ -41,9 +47,11 @@ class CuestionarioForm(forms.ModelForm):
                   'apellido_paterno':  forms.TextInput(attrs={'class':'form-control'}), 
                   'apellido_materno':  forms.TextInput(attrs={'class':'form-control'}), 
                   'edad' : forms.Select(attrs={'class':'form-control'}),
-                  'sexo' : forms.Select(attrs={'class':'form-control'}),
-                  'domicilio':  forms.TextInput(attrs={'class':'form-control'}),
-                  'estado_civil' : forms.Select(attrs={'class':'form-control'}),
+                  'sexo' : forms.RadioSelect(),
                   'residencia' : forms.Select(attrs={'class':'form-control'}),
-                  'celular':  forms.TextInput(attrs={'class':'form-control'}),
+                  'even':  forms.RadioSelect(),
+                  'situacion' :  forms.RadioSelect(),
+                  'manifestaciones' :  forms.RadioSelect(),
+                  'infecciones' :  forms.RadioSelect(),
+                  'neoplasias' :  forms.RadioSelect(),
         }

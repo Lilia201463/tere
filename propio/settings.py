@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'propio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'otra',
+        'NAME': 'yeye',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',

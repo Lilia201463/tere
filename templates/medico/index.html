@@ -1,0 +1,54 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Medicos</td>
+      <td>Pacientes</td>
+      <td>Expedientes</td>
+      <td>Pruebas PCR</td>
+      <td>Cuestionarios</td>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+    <td>
+       <a  class="btn btn-primary"  href="{% url 'usuario:registrar' %}">Registrar Medico</a>
+        <a class="btn btn-primary" href="{% url 'medico:medico_listar'%}">Lista de Medicos</a>
+      </td>
+     <td>
+        <a class="btn btn-primary" href="{% url 'paciente:paciente_crear'%}">Registrar Paciente</a>
+        <a class="btn btn-primary" href="{% url 'paciente:paciente_listar'%}">Lista de Pacientes</a>
+      </td>
+    <td>
+        <a class="btn btn-primary" href="{% url 'expediente:expediente_crear'%}">Registrar Expediente</a>
+        <a class="btn btn-primary" href="{% url 'expediente:expediente_listar'%}">Lista de Expedientes</a>
+      </td>
+       <td>
+        <a class="btn btn-primary" href="{% url 'pruebaPCR:prueba_crear'%}">Anexar Prueba PCR</a>
+        <a class="btn btn-primary" href="{% url 'pruebaPCR:prueba_listar'%}">Lista de Pruebas PCR</a>
+      </td>
+       <td>
+        <a class="btn btn-primary" href="{% url 'cuestionario:cuestionario_crear'%}">Realizar un nuevo cuestionario</a>
+        <a class="btn btn-primary" href="{% url 'cuestionario:cuestionario_listar'%}">Lista de cuestionarios</a>
+      </td>
+
+       
+    </tr>
+  </tbody>
+</table> 
+<ul class="pager">
+  <li>
+    {% if page_obj.has_previous %}
+         <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+        </li>
+  <li>
+    {% if page_obj.has_next %}
+       <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+      {% endif %}
+    </li>
+</ul>
+{% endblock%}0

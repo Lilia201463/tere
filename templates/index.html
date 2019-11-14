@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+
+{% block navbar%}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Bienvenido al sistema del Pre-diagnóstico  del VIH</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+</nav>
+{% endblock %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+ <center>
+<table width="70%">
+  <tbody>
+    <tr>
+      <td colspan="2"><h3>Soy un médico<h3></td>
+      <td><h3>Soy un Paciente<h3> </td>
+    </tr>
+    <tr>
+      <td colspan="2"><label for="username">Nombre de usuario:</label></td>
+      <td rowspan="5"><a class="btn btn-primary" href="{% url 'cuestionario:cuestionario_crear' %}">Resolver cuestionario</a></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input class="form-control" type="text" name="username"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label for="username">Contraseña:</label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input class="form-control" type="password" name="password"></td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'password_reset' %}">Olvidé mi contraseña</a></td>
+      <td><input class="btn btn-primary" type="submit" value="Ingresar"></td>
+    </tr>
+  </tbody>
+</table>
+</center>
+</form>
+
+
+
+
+{% endblock %}

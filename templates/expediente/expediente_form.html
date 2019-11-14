@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+{%  block content %}
+<div style="text-align:center"><h1>Expediente</h1></div>
+<form method="post">
+	{% csrf_token %}
+
+<table class="table table-center" width=50 >
+  <tr>
+  	<div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.id_expediente.name}}">{{form.id_expediente.label}}</label></td>
+    	<td class="tg-cly1">{{form.id_expediente}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.nss_paciente.name}}">{{form.nss_paciente.label}}</label></td>
+    	<td class="tg-cly1">{{form.nss_paciente}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.titulo.name}}">{{form.titulo.label}}</label></td>
+    	<td class="tg-cly1">{{form.titulo}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.fecha.name}}">{{form.fecha.label}}</label></td>
+    	<td class="tg-cly1">{{form.fecha}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.id_prueba.name}}">{{form.id_prueba.label}}</label></td>
+    	<td class="tg-cly1">{{form.id_prueba}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.id_cuestionario.name}}">{{form.id_cuestionario.label}}</label></td>
+    	<td class="tg-cly1">{{form.id_cuestionario}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.observaciones.name}}">{{form.observaciones.label}}</label></td>
+    	<td class="tg-cly1">{{form.observaciones}}</td>
+    </div>
+  </tr>
+</table>
+	<div style="text-align:center"><td class="tg-cly1" colspan="2"><button  type="submit">Guardar</button> </td></div>
+</form> 
+{% endblock %}
+
+

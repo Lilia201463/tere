@@ -1,0 +1,97 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div style="text-align:center"><h1>Cuestionario</h1></div>
+<form method="post">
+	{% csrf_token %}
+
+	<table class="table table-center" width=50 >
+	<tr>
+  	<div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.id_cuestionario.name}}">{{form.id_cuestionario.label}}</label></td>
+    	<td class="tg-cly1">{{form.id_cuesionario}}</td>
+    </div>
+  </tr>
+  <tr>
+  	<div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.nss_paciente.name}}">{{form.nss_paciente.label}}</label></td>
+    	<td class="tg-cly1">{{form.nss_paciente}}</td>
+    </div>
+  </tr>
+    <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.nombres.name}}">{{form.nombres.label}}</label></td>
+    	<td class="tg-cly1">{{form.nombres}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.apellido_paterno.name}}">{{form.apellido_paterno.label}}</label></td>
+    	<td class="tg-cly1">{{form.apellido_paterno}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.apellido_materno.name}}">{{form.apellido_materno.label}}</label></td>
+    	<td class="tg-cly1">{{form.apellido_materno}}</td>
+    </div>
+  </tr>
+     <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.edad.name}}">{{form.edad.label}}</label></td>
+    	<td class="tg-cly1">{{form.edad}}</td>
+    </div>
+  </tr>
+   <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.sexo.name}}">{{form.sexo.label}}</label></td>
+    	<td class="tg-cly1">{{form.sexo}}</td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.estado_civil.name}}">{{form.estado_civil.label}}</label></td>
+    	<td class="tg-cly1">{{form.estado_civil}}</td>
+    </div>
+  </tr>
+    <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.residencia.name}}">{{form.residencia.label}}</label></td>
+    	<td class="tg-cly1">{{form.residencia}}</td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label for="{{form.even.name}}">{{form.even.label}}</label></td>
+    	<td class="tg-cly1">{{form.even}}</td>
+    </div>
+  </tr>
+    <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.situacion.name}}">{{form.situacion.label}}</label></td>
+      <td class="tg-cly1">{{form.situacion}}</td>
+    </div>
+  </tr>
+    <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.manifestaciones.name}}">{{form.manifestaciones.label}}</label></td>
+      <td class="tg-cly1">{{form.manifestaciones}}</td>
+    </div>
+  </tr>
+      <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.infecciones.name}}">{{form.infecciones.label}}</label></td>
+      <td class="tg-cly1">{{form.infecciones}}</td>
+    </div>
+  </tr>
+    <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.neoplasias.name}}">{{form.neoplasias.label}}</label></td>
+      <td class="tg-cly1">{{form.neoplasias}}</td>
+    </div>
+  </tr>
+</table>
+	<div style="text-align:center"><td class="tg-cly1" colspan="2"><button  type="submit">Guardar</button> </td></div>
+
+</form>
+{% endblock %}

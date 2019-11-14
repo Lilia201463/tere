@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div style="text-align:center"><h1>Lista de Expedientes</h1></div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Numero de expediente</td>
+      <td>NSS del paciente</td>
+      <td>Fecha</td>
+      <td>Acciones</td>
+    </tr>
+    
+  </thead>
+  <tbody>
+    {% if object_list %}
+    {% for expediente in object_list %}
+    <tr>
+      <td>{{ expediente.id_expediente }}</td>
+      <td>{{ expedeinte.nss_paciente }}</td>
+      <td>{{ expediente.fecha }}</td>
+
+
+      <td>
+        <a class="btn btn-primary" href="{% url 'expediente:expediente_editar' expediente.id_expedeinte %}">Editar</a>
+        <a class="btn btn-danger" href="{% url 'expediente:expediente_eliminar' expediente.id_expedeinte %}">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+    
+    {% else %}
+    <h1>No hay expedientes registrados</h1>
+    {% endif %}
+  </tbody>
+</table> 
+<div style="text-align:center"><a class="btn btn-primary" href="{% url 'medico:medico_inicio'%}">Regresar al inicio</a></div>
+<ul class="pager">
+  <li>
+    {% if page_obj.has_previous %}
+         <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+        </li>
+  <li>
+    {% if page_obj.has_next %}
+       <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+      {% endif %}
+    </li>
+</ul>
+{% endblock%}0

@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div style="text-align:center"><h1>Registrar nuevo usuario</h1></div>
+
+<form method="post">
+	{% csrf_token %}
+	
+<table class="table table-center" width=50 >
+  <tr>
+  	<div class="form-group">			
+    	<td class="tg-cly1"><label >Nombre de usuario</label></td>
+    	<td class="tg-cly1"><input class="form-control" type="text" name="username"></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label >Correo</label></td>
+    	<td class="tg-cly1"><input class="form-control" type="text" name="email"></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label >Contraseña</label></td>
+    	<td class="tg-cly1"><input class="form-control" type="password" name="password1"></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">			
+    	<td class="tg-cly1"><label >Confirmar contraseña</label></td>
+    	<td class="tg-cly1"><input class="form-control" type="password" name="password2"></td>
+    </div>
+  </tr>
+
+</table>
+
+<div style="text-align:center"><button class="btn btn-primary "type="submit">Siguiente</button></div>
+	
+</form>
+
+{% endblock %}
+
+
+

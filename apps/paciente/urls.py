@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = [
     url(r'^$',login_required(PacienteCreate.as_view()), name='paciente_crear'),
     url(r'^listar',login_required(PacienteList.as_view()), name='paciente_listar'),
-    url(r'^editar/(?P<pk>\d+)/$',login_required(PacienteUpdate.as_view()), name='paciente_editar'),
-    url(r'^modificar/(?P<pk>\d+)/$',login_required(ModificarUpdate.as_view()), name='paciente_modificar'),
-    
+    url(r'^editar/(?P<pk>[0-9A-Za-z]+)/$',login_required(PacienteUpdate.as_view()), name='paciente_editar'),
+    url(r'^modificar/(?P<pk>[0-9A-Za-z]+)/$',login_required(ModificarUpdate.as_view()), name='paciente_modificar'),
+   
    ]

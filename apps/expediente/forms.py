@@ -30,7 +30,7 @@ class ExpedienteForm(forms.ModelForm):
             'id_expediente':forms.Select(attrs={'class':'form-control'}),
             'nss_paciente':forms.Select(attrs={'class':'form-control'}), 
             'titulo':  forms.TextInput(attrs={'class':'form-control'}), 
-            'fecha':  forms.TextInput(attrs={'class':'form-control'}), 
+            'fecha':  forms.SelectDateWidget(attrs={'class':'form-control'}, years=range(1995, 2100)),
             'id_prueba':forms.Select(attrs={'class':'form-control'}),
             'id_cuestionario':forms.Select(attrs={'class':'form-control'}), 
             'observaciones':  forms.TextInput(attrs={'class':'form-control'}), 

@@ -7,8 +7,12 @@
 <table class="table table-center" width=50 >
   <tr>
   	<div class="form-group">			
+      
     	<td class="tg-cly1"><label for="{{form.id_expediente.name}}">{{form.id_expediente.label}}</label></td>
     	<td class="tg-cly1">{{form.id_expediente}}</td>
+      {% if messages %}
+      <td class="tg-cly1">{{messages}}</td>
+      {% endif %}
     </div>
   </tr>
   <tr>
@@ -19,8 +23,11 @@
   </tr>
   <tr>
     <div class="form-group">			
+        {% if messages %}
+      <td class="tg-cly1">{{messages}}</td>
     	<td class="tg-cly1"><label for="{{form.titulo.name}}">{{form.titulo.label}}</label></td>
     	<td class="tg-cly1">{{form.titulo}}</td>
+      {% endif %}
     </div>
   </tr>
   <tr>

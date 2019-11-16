@@ -1,0 +1,75 @@
+{% extends 'base/base.html' %}
+{%  block content %}
+<form method="post">
+  {% csrf_token %}
+  <table class="table table-center" width=50 >
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.nss_paciente.name}}">{{form.nss_paciente.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.nss_paciente}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.cedula_medico.name}}">{{form.cedula_medico.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.cedula_medico}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.apellido_paterno.name}}">{{form.apellido_paterno.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.apellido_paterno}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.apellido_materno.name}}">{{form.apellido_materno.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.apellido_materno}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.nombres.name}}">{{form.nombres.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.nombres}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.fecha_nacimiento.name}}">{{form.fecha_nacimiento.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.fecha_nacimiento}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.sexo.name}}">{{form.sexo.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.sexo}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.domicilio.name}}">{{form.domicilio.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.domicilio}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.correo_electronico.name}}">{{form.correo_electronico.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.correo_electronico}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.telefono.name}}">{{form.telefono.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.telefono}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.celular.name}}">{{form.celular.label}}</label></td>
+      <td class="tg-cly1"><input type="text" name="{{form.celular}}" value="Norway" readonly></td>
+    </div>
+  </tr>
+</table>
+  <div style="text-align:center"> <a class="btn btn-primary btn-block" href="{% url 'paciente:paciente_editar'%}">Editar</a></div>
+</form> 
+{% endblock %}

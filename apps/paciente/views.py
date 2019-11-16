@@ -28,3 +28,4 @@ class ModificarUpdate(UpdateView):
 	template_name = 'paciente/index_paciente.html'
 	success_url = reverse_lazy('paciente:paciente_listar')
 
+

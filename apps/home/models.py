@@ -1,13 +1,24 @@
 from django.db import models
+from django.core.validators import RegexValidator
+
+
+
+class TelValidator(RegexValidator):
+    regex = '^([0-9]{10})$'
+    message = u'Telefono invalido'
+
+class TextoValidator(RegexValidator):
+    regex = '[A-Za-z]'
+    message = u'Solo se admiten letras'
 
 
 # Create your models here.
 class Home(models.Model):
     id_cuestionario = models.AutoField(primary_key=True)
-    nss_paciente = models.CharField(max_length=11, unique=True)
-    nombres = models.CharField(max_length=50)
-    apellido_paterno = models.CharField(max_length=50)
-    apellido_materno = models.CharField(max_length=50)
+    nss_paciente = models.CharField(max_length=11, unique=True, validators=[TelValidator()])
+    nombres = models.CharField(max_length=50, validators=[TextoValidator()])
+    apellido_paterno = models.CharField(max_length=50, validators=[TextoValidator()])
+    apellido_materno = models.CharField(max_length=50, validators=[TextoValidator()])
     EDAD_CHOICES=(
             ('0.2', 'Menos de 1 año'),
             ('0.6', '1-4'),

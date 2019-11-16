@@ -36,7 +36,7 @@ class MedicoForm(forms.ModelForm):
                   'apellido_paterno':  forms.TextInput(attrs={'class':'form-control'}), 
                   'apellido_materno':  forms.TextInput(attrs={'class':'form-control'}), 
                   'nombres':  forms.TextInput(attrs={'class':'form-control'}), 
-                  'fecha_nacimiento':  forms.TextInput(attrs={'class':'form-control'}),
+                  'fecha_nacimiento':  forms.SelectDateWidget(attrs={'class':'form-control'}, years=range(1995, 2100)),
                   'sexo' : forms.Select(attrs={'class':'form-control'}),
                   'domicilio':  forms.TextInput(attrs={'class':'form-control'}),
                   'especialidad' : forms.TextInput(attrs={'class':'form-control'}),  

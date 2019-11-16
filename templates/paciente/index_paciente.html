@@ -4,19 +4,61 @@
   {% csrf_token %}
   <table class="table table-center" width=50 >
   <tr>
-    <div class="form">      
+    <div class="form-group">      
       <td class="tg-cly1"><label for="{{form.nss_paciente.name}}">{{form.nss_paciente.label}}</label></td>
-      <td class="tg-cly1">{{form.nss_paciente}}</td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.nss_paciente}}" readonly></td>
     </div>
   </tr>
   <tr>
-    <div class="form">      
+    <div class="form-group">      
       <td class="tg-cly1"><label for="{{form.cedula_medico.name}}">{{form.cedula_medico.label}}</label></td>
-      <td class="tg-cly1">{{form.cedula_medico}}</td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.cedula_medico}}" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.apellido_paterno.name}}">Nombre completo</label></td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.apellido_paterno}} {{paciente.apellido_materno}} {{paciente.nombres}} " readonly></td>
     </div>
   </tr>
 
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.fecha_nacimiento.name}}">{{form.fecha_nacimiento.label}}</label></td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.fecha_nacimiento}}" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.sexo.name}}">{{form.sexo.label}}</label></td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.sexo}}" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.domicilio.name}}">{{form.domicilio.label}}</label></td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.domicilio}}" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.correo_electronico.name}}">{{form.correo_electronico.label}}</label></td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.correo_electronico}}" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.telefono.name}}">{{form.telefono.label}}</label></td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.telefono}}" readonly></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">      
+      <td class="tg-cly1"><label for="{{form.celular.name}}">{{form.celular.label}}</label></td>
+      <td class="tg-cly1"><input type="text" value="{{paciente.celular}}" readonly></td>
+    </div>
+  </tr>
 </table>
-  <div style="text-align:center"><td class="tg-cly1" colspan="2"><button  type="submit">Guardar</button> </td></div>
+  <div style="text-align:center"><a class="btn btn-primary" href="{% url 'paciente:paciente_editar' paciente.nss_paciente %}">Editar</a></div>
 </form> 
 {% endblock %}

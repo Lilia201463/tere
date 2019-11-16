@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <td>Cédula</td>
+      <td>Fecha de registro</td>
       <td>Apellidos</td>
       <td>Nombres</td>
       <td>Acciones</td>
@@ -17,6 +18,7 @@
     {% for medico in object_list %}
     <tr>
       <td>{{ medico.cedula_medico }}</td>
+      <td>{{ medico.fecha_registro }}</td>
       <td>{{ medico.apellido_paterno }} {{ medico.apellido_materno }}</td>
       <td>{{ medico.nombres }}</td>
       <td>
